@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "render": "remotion render src/index.ts Test5s out/test-5s.mp4"
+    "render": "remotion render src/index.ts Test5s out/test-5s.mp4",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "remotion": "4.0.545",
