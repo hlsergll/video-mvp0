@@ -1,3 +1,4 @@
+
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {theme} from '../theme';
 
@@ -16,6 +17,10 @@ export const TitleCard: React.FC = () => {
     extrapolateRight: 'clamp',
   });
 
+  const zoom = interpolate(frame, [0, 120], [0.96, 1], {
+    extrapolateRight: 'clamp',
+  });
+
   return (
     <div
       style={{
@@ -24,7 +29,7 @@ export const TitleCard: React.FC = () => {
         left: '10%',
         right: '10%',
         opacity: entrance * exit,
-        transform: `translateY(${interpolate(entrance, [0, 1], [50, 0])}px)`,
+        transform: `translateY(${interpolate(entrance, [0, 1], [50, 0])}px) scale(${zoom})`,
         textAlign: 'center',
         color: theme.colors.white,
         fontFamily: 'Inter, Arial, sans-serif',
